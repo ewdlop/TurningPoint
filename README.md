@@ -25,3 +25,6 @@ Here’s a creative interpretation for highways:
 This metaphorical lens could be applied to civil engineering or urban planning to rethink and redesign complex traffic systems while ensuring they remain functionally equivalent.
 
 If this is what you're hinting at, or if you have a specific context, let me know!
+
+
+## 人家德國超高速路都比你們高速鐵路快
