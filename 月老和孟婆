@@ -1,1 +1,119 @@
+# Memory eraser
 
+設計一個**「老和孟婆」程序**聽起來像是一個充滿哲理性和創意的挑戰！這可以是一個模擬生命循環、記憶消除與抉擇的程式，融合東方哲學和科技的元素，探索人生、死亡與記憶的概念。
+
+---
+
+### **1. 程式目標**
+**「老」**象徵生命的智慧與衰老，**「孟婆」**象徵遺忘與輪迴。這個程式可以模擬：
+1. **生命週期的抉擇與記憶：** 使用者在面對不同階段（少年、中年、老年）時，如何選擇影響生命軌跡。
+2. **記憶的消除與保留：** 孟婆的湯作為一種選擇，使用者可以選擇是否遺忘過去。
+3. **哲學思辨：** 探討遺忘與記憶對人生的意義。
+
+---
+
+### **2. 程式功能設計**
+以下是「老和孟婆」程序的一些可能功能：
+
+#### **(a) 生命選擇模擬**
+- 在不同年齡段，給使用者提供選擇：
+  1. **少年期：** 尋找夢想還是順從現實？
+  2. **中年期：** 追求事業還是家庭和諧？
+  3. **老年期：** 回顧過去，選擇遺憾還是滿足？
+  
+- 每個選擇會影響最終結果，例如幸福指數、成就感、以及記憶的深刻程度。
+
+#### **(b) 孟婆湯選項**
+- **喝孟婆湯：**
+  - 使用者選擇遺忘哪些記憶，模擬轉世輪迴。
+  - 系統提示：
+    - 「若選擇遺忘痛苦，你也將遺忘成長的價值。」
+    - 「選擇保留快樂，你是否能承受未來的空虛？」
+- **不喝孟婆湯：**
+  - 使用者保留所有記憶，帶著完整的體驗進入下一階段。
+
+#### **(c) 記憶檔案庫**
+- 程式會保存使用者的每一次選擇與過去「輪迴」的記憶：
+  - 使用者可以查看之前的選擇如何影響當前情境。
+  - 記憶可以用圖像、文字或數據的形式表現。
+
+#### **(d) 哲學性結局**
+- 根據選擇生成人生總結：
+  - **選擇平衡的玩家：** 「你的人生如同一杯淡茶，苦與甜交織，最終平靜。」
+  - **過度追求極端的玩家：** 「你的記憶如烈火，燒盡了一切，也無法延續。」
+  - **選擇遺忘一切的玩家：** 「你走向空白的輪迴，忘記了曾經，也重啟了新的篇章。」
+
+---
+
+### **3. 程式結構**
+
+#### **(a) 核心模組設計**
+1. **生命週期模組：**
+   - 設置每個階段的選項與影響因素。
+   - 每次選擇影響下一階段的可選項目。
+2. **記憶與遺忘模組：**
+   - 使用數據結構（如字典或數組）儲存使用者選擇與記憶。
+   - 根據孟婆湯的選擇清除或修改記憶數據。
+3. **結局生成模組：**
+   - 根據整體選擇生成文字或圖像化的結局。
+
+#### **(b) 程式邏輯範例**
+以 Python 為例：
+
+```python
+class LifeCycle:
+    def __init__(self):
+        self.memory = []  # 保存記憶
+        self.choices = []  # 保存選擇
+
+    def choose(self, stage, options):
+        print(f"Stage: {stage}")
+        for idx, option in enumerate(options):
+            print(f"{idx + 1}. {option}")
+        choice = int(input("Make your choice: ")) - 1
+        self.choices.append(options[choice])
+        self.memory.append(f"{stage}: {options[choice]}")
+
+    def drink_mengpo_soup(self):
+        print("\nDo you want to drink Mengpo's soup and forget your memories?")
+        choice = input("Type 'yes' to forget, 'no' to keep: ").strip().lower()
+        if choice == 'yes':
+            self.memory = []  # 清空記憶
+            print("You chose to forget everything.")
+        else:
+            print("You chose to keep your memories.")
+
+    def show_life_summary(self):
+        print("\nYour Life Summary:")
+        for mem in self.memory:
+            print(f"- {mem}")
+        print("End of your journey.\n")
+
+# 主程式
+game = LifeCycle()
+game.choose("Youth", ["Pursue dreams", "Follow reality"])
+game.choose("Middle Age", ["Focus on career", "Focus on family"])
+game.choose("Old Age", ["Reflect with regret", "Reflect with satisfaction"])
+game.drink_mengpo_soup()
+game.show_life_summary()
+```
+
+---
+
+### **4. 程式的哲學意義**
+- **選擇的不可逆性：** 人生如同一個程序，每一步的選擇都會影響最終結果。
+- **記憶的重要性：** 記憶既是成長的痕跡，也是痛苦的源泉。是否選擇遺忘，反映了對人生態度的抉擇。
+- **輪迴的隱喻：** 程式中的「下一輪遊戲」象徵著重生，但也可能是對過去的逃避。
+
+---
+
+### **5. 詩意結語**
+
+_孟婆湯一碗，忘卻千般愁；  
+老者訴舊事，輪迴始新秋。  
+選擇多如命，記憶如星留；  
+無論得與失，人生共行舟。_
+
+---
+
+如果您有具體需求，例如想讓程序更有互動性或更符合某種文化背景，請告訴我！我可以進一步優化設計方案。 😊
